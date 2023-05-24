@@ -13,10 +13,10 @@ export class CursoComponent implements OnInit {
   url = "http://localhost/api/php/";
 
   //vetor de cursos
-  vetor:Curso[] | undefined; //| undefined adicionado automaticamente pelo angular
+  vetor: Curso[];
 
   //construtor
-  constructor(private http:HttpClient){ }
+  constructor(private http:HttpClient){  }
 
   //Inicializador
   ngOnInit(){
