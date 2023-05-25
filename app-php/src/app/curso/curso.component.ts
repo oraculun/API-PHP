@@ -13,7 +13,7 @@ export class CursoComponent implements OnInit {
   url = "http://localhost/api/php/";
 
   //vetor de cursos
-  vetor: Curso[];
+  vetor: Curso[] = [];
 
   //construtor
   constructor(private http:HttpClient){  }
