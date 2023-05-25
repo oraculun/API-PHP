@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Curso } from './curso';
+import { CursoService } from './curso.service';
 
 @Component({
   selector: 'app-curso',
@@ -9,29 +9,31 @@ import { Curso } from './curso';
 })
 export class CursoComponent implements OnInit {
 
-  //URL base
-  url = "http://localhost/api/php/";
-
   //vetor de cursos
   vetor: Curso[] = [];
 
   //construtor
-  constructor(private http:HttpClient){  }
+  constructor(private curso_servico:CursoService){  }
 
   //Inicializador
   ngOnInit(){
+    //Ao inicir o sistema, deverá listar os cursos
+    this.selecao();
   }
+
+    //Seleção
+    selecao(){
+      this.curso_servico.obterCurso().subscribe(
+        (res: Curso[]) => {
+          this.vetor = res;
+        }
+      )
+    }
 
   //Cadastro
   cadastro():void{
     alert("Cadastro");
   }
-
-  //Seleção
-  selecao():void{
-    alert("Seleção");
-  }
-
   //Alterar
   alterar():void{
     alert("Alterar");
@@ -41,4 +43,5 @@ export class CursoComponent implements OnInit {
   remover():void{
     alert("Remover");
   }
+
 }
