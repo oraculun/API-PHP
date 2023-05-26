@@ -1,3 +1,4 @@
+
 <?php
 
 //Incluir a conexão
@@ -23,6 +24,5 @@ while($linha = mysqli_fetch_assoc($executar)){
 
     $indice++;
 }
-
-json_encode($cursos);  //json_encode(['dados'=>$cursos]);
+echo(json_encode($cursos));  //json_encode(['dados'=>$cursos]);
 ?>
