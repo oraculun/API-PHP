@@ -50,6 +50,14 @@ export class CursoComponent implements OnInit {
     )
   }
 
+  //selecionar curso
+  selecionarCurso(c:Curso){
+    this.curso.idCurso = c.idCurso;
+    this.curso.nomeCurso = c.nomeCurso;
+    this.curso.valorCurso = c.valorCurso;
+
+  }
+
   //Cadastro
   cadastro(){
     this.curso_servico.cadastrarCurso(this.curso).subscribe(
