@@ -41,7 +41,6 @@ export class CursoService {
 
   //Atualizar curso
   atualizarCurso(c:Curso):Observable<Curso[]>{
-
     //Executar a alteração via URL
     return this.http.put(this.url+'alterar', {cursos: c})
     //Percorer o vetor para saber qual é o id do curso alterado
