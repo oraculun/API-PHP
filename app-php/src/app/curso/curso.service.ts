@@ -28,6 +28,7 @@ export class CursoService {
     )
   }
 
+  /*
   //Cadastrar curso
   cadastrarCurso(c:Curso): Observable<Curso[]>{
     return this.http.post(this.url+'cadastrar', {cursos:c}) //enviar os dados cadastrar.php
@@ -36,25 +37,12 @@ export class CursoService {
       return this.vetor;
     }))
   }
-
-  //Remover Curso
-  /*antes da revisão
-  removerCurso(c: Curso): Observable<Curso[]>{
-
-    const params = new HttpParams().set("idCurso", c.idCurso.toString());
-
-    return this.http.delete(this.url+'excluir', {params: params})
-    .pipe(map((res) => {
-
-      const filtro = this.vetor.filter((curso)=>{
-        return +curso['idCurso'] !== +c.idCurso;
-      });
-
-      return this.vetor = filtro;
-
-    }))
-  }
   */
+   //Cadastrar curso
+  cadastrarCurso(c:Curso):Observable<Curso>{
+    return this.http.post<Curso>(this.url+'cadastrar', Curso);
+  }
+
   removerCurso (id:any):Observable<Curso>{
     const url = `${this.url}excluir?idCurso=${id}`;
     return this.http.delete<Curso>(url);

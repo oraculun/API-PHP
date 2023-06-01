@@ -7,7 +7,7 @@ include("conexao.php");
 $idCurso=$_GET["idCurso"];
 
 //SQL
-$sql = "DELETE FROM curso WHERE idCurso=$idCurso";
+$sql = "DELETE FROM cursos WHERE idCurso=$idCurso";
 mysqli_query($conexao, $sql);
 
 ?>

@@ -10,8 +10,8 @@ $obterDados = file_get_contents("php://input");
 $extrair = json_decode($obterDados);
 
 //Separar os dados do JSON
-$nomeCurso = $extrair->cursos->nomeCurso;
-$valorCurso = $extrair->cursos->valorCurso;
+$nomeCurso = $extrair->nomeCurso;
+$valorCurso = $extrair->valorCurso;
 
 //SQL
 $sql = "INSERT INTO cursos (nomeCurso, valorCurso) values ('$nomeCurso', $valorCurso)";
