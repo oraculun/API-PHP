@@ -38,6 +38,7 @@ export class CursoService {
   }
 
   //Remover Curso
+  /*antes da revisão
   removerCurso(c: Curso): Observable<Curso[]>{
 
     const params = new HttpParams().set("idCurso", c.idCurso.toString());
@@ -53,5 +54,9 @@ export class CursoService {
 
     }))
   }
-
+  */
+  removerCurso (id:any):Observable<Curso>{
+    const url = `${this.url}excluir?idCurso=${id}`;
+    return this.http.delete<Curso>(url);
+    }
 }
