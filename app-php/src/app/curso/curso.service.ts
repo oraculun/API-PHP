@@ -40,7 +40,7 @@ export class CursoService {
   */
    //Cadastrar curso
   cadastrarCurso(c:Curso):Observable<Curso>{
-    return this.http.post<Curso>(this.url+'cadastrar', Curso);
+    return this.http.post<Curso>(this.url+'cadastrar', c);
   }
 
   removerCurso (id:any):Observable<Curso>{
