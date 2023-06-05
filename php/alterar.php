@@ -10,12 +10,12 @@ $obterDados = file_get_contents("php://input");
 $extrair = json_decode($obterDados);
 
 //Separar os dados do JSON
-$idCurso = $extrair->curso->idCurso;
-$nomeCurso = $extrair->cursos->nomeCurso;
-$valorCurso = $extrair->cursos->valorCurso;
+$idCurso = $extrair->idCurso;
+$nomeCurso = $extrair->nomeCurso;
+$valorCurso = $extrair->valorCurso;
 
 //SQL
-$sql = "UPDATE curso SET nomeCurso='$nomeCurso', valorCurso=$valorCurso WHERE idCurso=$idCurso";
+$sql = "UPDATE cursos SET nomeCurso='$nomeCurso', valorCurso=$valorCurso WHERE idCurso=$idCurso";
 mysqli_query($conexao, $sql);
 
 //Exportar os dados cadastrados
@@ -25,6 +25,6 @@ $curso = [
     'valorCurso' => $valorCurso,
 ];
 
-json_encode(['curso' => $curso]);
+json_encode($curso);
 
 ?>

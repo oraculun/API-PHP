@@ -34,18 +34,15 @@ export class CursoComponent implements OnInit {
     }
 
   //Alterar
-  alterar():void{
+  alterar(){
     this.curso_servico.atualizarCurso(this.curso).subscribe(
-      (res) => {
+      (res: Curso) => {
 
-        //Atualizar vetor
-        this.vetor = res;
-
-        //Limpar os valores do objeto
+        //Limpar os atributos
         this.curso.nomeCurso = "";
         this.curso.valorCurso = 0;
 
-        //atualizar a listagem
+        //Atualizar a listagem de curso
         this.selecao();
       }
     )
@@ -68,7 +65,6 @@ export class CursoComponent implements OnInit {
     this.curso.idCurso = c.idCurso;
     this.curso.nomeCurso = c.nomeCurso;
     this.curso.valorCurso = c.valorCurso;
-
   }
 
   //Cadastro
